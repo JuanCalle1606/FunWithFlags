@@ -19,7 +19,7 @@ public class Main {
 		System.out.println(txt);
 	}
 	private static void loadFlags(){
-		//Esta función Cargara lel archivo de banderas y lo parceara
+		//Esta función cargara el archivo de banderas y lo parseara
 		trace("Cargando banderas...");
 	}
 }
