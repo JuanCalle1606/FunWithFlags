@@ -3,6 +3,10 @@
  */
 public class Texts {
 
+	public static String getMainMenu(){
+		return "\n\n"+ConsoleColors.RED+"\t1."+ConsoleColors.RESET+" Salir";
+	}
+
 	private static String[] Titles = new String[]{
 ConsoleColors.YELLOW+"___________            "+ConsoleColors.BLUE+"  __      __.__  __  .__     "+ConsoleColors.RED+" ___________.__                        \n"+
 ConsoleColors.YELLOW+"\\_   _____/_ __  ____  "+ConsoleColors.BLUE+" /  \\    /  \\__|/  |_|  |__  "+ConsoleColors.RED+" \\_   _____/|  | _____     ____  ______\n"+
@@ -15,9 +19,9 @@ ConsoleColors.GREEN+"/    // \\ /\\/ \\  /| "+ConsoleColors.RESET+" / \\  /|/ \\
 ConsoleColors.GREEN+"|  __\\| | ||| |\\ || "+ConsoleColors.RESET+" | |  ||| |  / \\  | |_|| "+ConsoleColors.RED+" |  __\\| |   | / \\|| |  _|    \\\n"+
 ConsoleColors.GREEN+"| |   | \\_/|| | \\|| "+ConsoleColors.RESET+" | |/\\||| |  | |  | | || "+ConsoleColors.RED+" | |   | |_/\\| |-||| |_//\\___ |\n"+
 ConsoleColors.GREEN+"\\_/   \\____/\\_/  \\| "+ConsoleColors.RESET+" \\_/  \\|\\_/  \\_/  \\_/ \\| "+ConsoleColors.RED+" \\_/   \\____/\\_/ \\|\\____\\\\____/\n",
-ConsoleColors.RED+" ____  __  __  _  _  "+ConsoleColors.RESET+"  _    _  ____  ____  _   _  "+ConsoleColors.RED+"  ____  __      __    ___  ___ \n"
-ConsoleColors.RED+"( ___)(  )(  )( \\( ) "+ConsoleColors.RESET+" ( \\/\\/ )(_  _)(_  _)( )_( ) "+ConsoleColors.RED+" ( ___)(  )    /__\\  / __)/ __)\n"
-ConsoleColors.RED+" )__)  )(__)(  )  (  "+ConsoleColors.RESET+"  )    (  _)(_   )(   ) _ (  "+ConsoleColors.RED+"  )__)  )(__  /(__)\\( (_-.\\__ \\\n"
+ConsoleColors.RED+" ____  __  __  _  _  "+ConsoleColors.RESET+"  _    _  ____  ____  _   _  "+ConsoleColors.RED+"  ____  __      __    ___  ___ \n"+
+ConsoleColors.RED+"( ___)(  )(  )( \\( ) "+ConsoleColors.RESET+" ( \\/\\/ )(_  _)(_  _)( )_( ) "+ConsoleColors.RED+" ( ___)(  )    /__\\  / __)/ __)\n"+
+ConsoleColors.RED+" )__)  )(__)(  )  (  "+ConsoleColors.RESET+"  )    (  _)(_   )(   ) _ (  "+ConsoleColors.RED+"  )__)  )(__  /(__)\\( (_-.\\__ \\\n"+
 ConsoleColors.RED+"(__)  (______)(_)\\_) "+ConsoleColors.RESET+" (__/\\__)(____) (__) (_) (_) "+ConsoleColors.RED+" (__)  (____)(__)(__)\\___/(___/\n"
 	};
 	
