@@ -3,8 +3,20 @@
  */
 public class Texts {
 
+	public static final String CLOSE = "Salir";
+	public static final String ABOUT = "Acerca de";
+
+	public static String[] mainMenu = new String[]{
+		ABOUT,
+		CLOSE
+	};
+
 	public static String getMainMenu(){
-		return "\n\n"+ConsoleColors.RED+"\t1."+ConsoleColors.RESET+" Salir";
+		String temp="\n";int len=mainMenu.length;
+		for(int i=0;i<len;i++){
+			temp+="\t"+ConsoleColors.GREEN+(i+1)+". "+ConsoleColors.RESET+mainMenu[i]+"\n";
+		}
+		return temp;
 	}
 
 	private static String[] Titles = new String[]{
