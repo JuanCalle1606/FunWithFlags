@@ -13,22 +13,24 @@ public class Util {
 	*/
 	public static void replaceColors(String[] mat){
 		for(byte i=0;i<27;i++)
+		{
 			mat[i]=
-			mat[i]=="1"?
-				ConsoleColors.RED_BACKGROUND
-			:mat[i]=="2"?
-				ConsoleColors.BLUE_BACKGROUND
-			:mat[i]=="3"?
-				ConsoleColors.WHITE_BACKGROUND
-			:mat[i]=="4"?
-				ConsoleColors.YELLOW_BACKGROUND
-			:mat[i]=="5"?
-				ConsoleColors.GREEN_BACKGROUND
-			:mat[i]=="6"?
-				ConsoleColors.PURPLE_BACKGROUND
-			:mat[i]=="7"?
-				ConsoleColors.CYAN_BACKGROUND
-			:ConsoleColors.BLACK_BACKGROUND;
+			mat[i].equals("1")?
+				ConsoleColors.RED_BACKGROUND+"  "+ConsoleColors.RESET
+			:mat[i].equals("2")?
+				ConsoleColors.BLUE_BACKGROUND+"  "+ConsoleColors.RESET
+			:mat[i].equals("3")?
+				ConsoleColors.WHITE_BACKGROUND+"  "+ConsoleColors.RESET
+			:mat[i].equals("4")?
+				ConsoleColors.YELLOW_BACKGROUND+"  "+ConsoleColors.RESET
+			:mat[i].equals("5")?
+				ConsoleColors.GREEN_BACKGROUND+"  "+ConsoleColors.RESET
+			:mat[i].equals("6")?
+				ConsoleColors.PURPLE_BACKGROUND+"  "+ConsoleColors.RESET
+			:mat[i].equals("7")?
+				ConsoleColors.CYAN_BACKGROUND+"  "+ConsoleColors.RESET
+			:ConsoleColors.BLACK_BACKGROUND+"  "+ConsoleColors.RESET;
+		}
 	}
 	/**
 	* Limpia la pantalla
