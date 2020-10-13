@@ -23,11 +23,12 @@ public class Main {
 		Util.clear();
 		//Menu principal del juego
 		trace(Texts.getTitle()+Texts.getMainMenu());
-		choose(false);
-		trace("Cargando...");
+		int option = choose(false);
+		while(!(option>0&&option<Texts.mainMenu.length)){
+			option = choose(true);
+		}
 	}
 	public static int choose(Boolean chooseError){
-		trace("");
 		if(chooseError) {
 			trace(ConsoleColors.RED+"Opción invalida, ingresa otra.");
 		}
