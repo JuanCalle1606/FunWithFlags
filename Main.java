@@ -19,6 +19,8 @@ public class Main {
 		MainMenu();
 	}
 	public static void MainMenu(){
+		//Se limpia lo anterior
+		Util.clear();
 		//Menu principal del juego
 		trace(Texts.getTitle()+Texts.getMainMenu());
 	}
@@ -62,17 +64,19 @@ public class Main {
 			}
 		}
 		trace("> Se cargaron un total de "+nBanderas+" banderas.");
-		// Esto de aqui se hace solo para ver que banderas han sido cargadas, luego se borrara
-		for (int i=0;i<nBanderas;i++){
-			trace("Bandera de "+paises[i]+":\n");
-			drawFlag(i);
-			trace("\n");
-		}
-
 	}
 	private static void drawFlag(int index){
 		for(byte i=0;i<19;i++)
 			for(byte j=0;j<27;j++)
 				trace(banderas[index][i][j],j==26?true:false);
+	}
+	private static void drawTwoFlags(int index1, int index2){
+		for(byte i=0;i<19;i++){
+			for(byte j=0;j<27;j++)
+				trace(banderas[index1][i][j],false);
+			trace("\t\t",false);
+			for(byte j=0;j<27;j++)
+				trace(banderas[index2][i][j],j==26?true:false);
+		}
 	}
 }
