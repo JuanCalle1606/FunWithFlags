@@ -12,7 +12,7 @@ public class Main {
 		Util.clear();
 		//mensaje inicial
 		trace(ConsoleColors.GREEN + "Por favor maximiza la consola para poder ver mejor el juego" + ConsoleColors.RESET);
-		trace(ConsoleColors.YELLOW+"Pulsa ENTER para iniciar"+ConsoleColors.BLACK);
+		trace(ConsoleColors.YELLOW+"Pulsa ENTER para iniciar"+ConsoleColors.BLACK,false);
 		ConsoleInput.getString();
 		trace(ConsoleColors.RESET);
 		loadFlags();
@@ -23,10 +23,15 @@ public class Main {
 		Util.clear();
 		//Menu principal del juego
 		trace(Texts.getTitle()+Texts.getMainMenu());
-		choose();
+		choose(false);
+		trace("Cargando...");
 	}
-	public static int choose(){
-		trace("\n"+ConsoleColors.YELLOW+"Escoge una opción: "+ConsoleColors.RESET, false);
+	public static int choose(Boolean chooseError){
+		trace("");
+		if(chooseError) {
+			trace(ConsoleColors.RED+"Opción invalida, ingresa otra.");
+		}
+		trace(ConsoleColors.YELLOW+"Escoge una opción: "+ConsoleColors.RESET, false);
 		return ConsoleInput.getInt();
 	}
 	public static void trace(String txt){

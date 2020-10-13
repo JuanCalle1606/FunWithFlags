@@ -14,8 +14,7 @@ public class ConsoleInput{
 		}catch(Exception e)
 		{
 			refreshScanner();
-			Main.trace(ConsoleColors.RED+"La opción ingresada no es valida, ingresa otra.");
-			return Main.choose();
+			return Main.choose(true);
 		}
 		return temp;
 	}
