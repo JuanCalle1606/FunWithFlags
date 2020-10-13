@@ -7,7 +7,6 @@ public class ConsoleInput{
 	public static int getInt()
 	{
 		int temp = 0;
-
 		try{
 			// Initialize the Scanner object to use the standard input
         	temp = sc.nextInt();
@@ -15,10 +14,9 @@ public class ConsoleInput{
 		}catch(Exception e)
 		{
 			refreshScanner();
-			System.out.println("Error de lectura de numero entero");
-			System.out.println(e);
+			Main.trace(ConsoleColors.RED+"La opción ingresada no es valida, ingresa otra.");
+			return Main.choose();
 		}
-
 		return temp;
 	}
 

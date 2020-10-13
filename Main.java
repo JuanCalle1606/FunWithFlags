@@ -23,6 +23,11 @@ public class Main {
 		Util.clear();
 		//Menu principal del juego
 		trace(Texts.getTitle()+Texts.getMainMenu());
+		choose();
+	}
+	public static int choose(){
+		trace("\n"+ConsoleColors.YELLOW+"Escoge una opción: "+ConsoleColors.RESET, false);
+		return ConsoleInput.getInt();
 	}
 	public static void trace(String txt){
 		trace(txt,true);
