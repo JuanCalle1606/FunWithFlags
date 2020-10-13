@@ -16,10 +16,12 @@ public class Main {
 		ConsoleInput.getString();
 		trace(ConsoleColors.RESET);
 		loadFlags();
-		MainMenu();
+		while(MainMenu())
+			trace("",false);
+
 		ConsoleInput.getString();
 	}
-	public static void MainMenu(){
+	public static Boolean MainMenu(){
 		//Se limpia lo anterior
 		Util.clear();
 		//Menu principal del juego
@@ -29,15 +31,31 @@ public class Main {
 			option = choose(true);
 		}
 		switch(Texts.mainMenu[option-1]){
-			case Texts.CLOSE:{
-				close();
-				break;
-			}
+			case Texts.CLOSE:
+				return close();
+			case Texts.ABOUT:
+				return about();
 		}
+		return true;
 	}
-	public static void close(){
+	public static Boolean about(){
+		Util.clear();
+		trace(Texts.getTitle());
+		//Andres, si quiere ponga su nombre completo aqui o lo puede dejar asi
+		trace("  "+ConsoleColors.GREEN+"Fun With Flags Ha sido creado por: \n"+
+			ConsoleColors.YELLOW+"    -Juan Pablo Calle"+ConsoleColors.CYAN+" (https://github.com/JuanCalle1606)\n"+
+			ConsoleColors.YELLOW+"    -Andres"+ConsoleColors.GREEN+
+			"\n  Diseño de las banderas ha sido realizado por distintos contribuidores en:\n"+
+			ConsoleColors.YELLOW+"    https://github.com/xaca/banderas_java/blob/master/recursos/info_banderas.csv\n"
+			);
+		trace(ConsoleColors.RESET+"Pulsa ENTER para Continuar"+ConsoleColors.BLACK,false);
+		ConsoleInput.getString();
+		return true;
+	}
+	public static Boolean close(){
 		Util.clear();
 		trace("\t"+ConsoleColors.GREEN+" Gracias por jugar!. "+ConsoleColors.RESET+" Pulsa ENTER para salir."+ConsoleColors.BLACK);
+		return false;
 	}
 	public static int choose(Boolean chooseError){
 		if(chooseError){
