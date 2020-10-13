@@ -19,7 +19,13 @@ public class Main {
 		trace(Texts.getTitle()+Texts.getMainMenu());
 	}
 	public static void trace(String txt){
-		System.out.println(txt);
+		trace(txt,true);
+	}
+	public static void trace(String txt, Boolean ln){
+		if(ln)
+			System.out.println(txt);
+		else
+			System.out.print(txt);
 	}
 	/**
 	 * Esta función carga el archivo .csv y guarda los contenidos de las banderas
