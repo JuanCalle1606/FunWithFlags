@@ -17,6 +17,7 @@ public class Main {
 		trace(ConsoleColors.RESET);
 		loadFlags();
 		MainMenu();
+		ConsoleInput.getString();
 	}
 	public static void MainMenu(){
 		//Se limpia lo anterior
@@ -24,12 +25,24 @@ public class Main {
 		//Menu principal del juego
 		trace(Texts.getTitle()+Texts.getMainMenu());
 		int option = choose(false);
-		while(!(option>0&&option<Texts.mainMenu.length)){
+		while(!(option>0&&option<=Texts.mainMenu.length)){
 			option = choose(true);
 		}
+		switch(Texts.mainMenu[option-1]){
+			case Texts.CLOSE:{
+				close();
+				break;
+			}
+		}
+	}
+	public static void close(){
+		Util.clear();
+		trace("\t"+ConsoleColors.GREEN+" Gracias por jugar!. "+ConsoleColors.RESET+" Pulsa ENTER para salir."+ConsoleColors.BLACK);
 	}
 	public static int choose(Boolean chooseError){
-		if(chooseError) {
+		if(chooseError){
+			Util.clear();
+			trace(Texts.getTitle()+Texts.getMainMenu());
 			trace(ConsoleColors.RED+"Opción invalida, ingresa otra.");
 		}
 		trace(ConsoleColors.YELLOW+"Escoge una opción: "+ConsoleColors.RESET, false);
