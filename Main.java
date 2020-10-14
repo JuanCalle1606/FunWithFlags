@@ -44,8 +44,8 @@ public class Main {
 		//Andres, si quiere ponga su nombre completo aqui o lo puede dejar asi
 		trace("  "+ConsoleColors.GREEN+"Fun With Flags Ha sido creado por: \n"+
 			ConsoleColors.YELLOW+"    -Juan Pablo Calle"+ConsoleColors.CYAN+" (https://github.com/JuanCalle1606)\n"+
-			ConsoleColors.YELLOW+"    -Andres"+ConsoleColors.GREEN+
-			"\n  Diseño de las banderas ha sido realizado por distintos contribuidores en:\n"+
+			ConsoleColors.YELLOW+"    -Andres Camilo Gomez Orozco"+ConsoleColors.CYAN+ " (https://github.com/AndresCGO)\n"+
+			ConsoleColors.GREEN+"\n  Diseño de las banderas ha sido realizado por distintos contribuidores en:\n"+
 			ConsoleColors.YELLOW+"    https://github.com/xaca/banderas_java/blob/master/recursos/info_banderas.csv\n"
 			);
 		trace(ConsoleColors.RESET+"Pulsa ENTER para Continuar"+ConsoleColors.BLACK,false);
