@@ -34,7 +34,22 @@ ConsoleColors.GREEN+"\\_/   \\____/\\_/  \\| "+ConsoleColors.RESET+" \\_/  \\|\\
 ConsoleColors.RED+" ____  __  __  _  _  "+ConsoleColors.RESET+"  _    _  ____  ____  _   _  "+ConsoleColors.RED+"  ____  __      __    ___  ___ \n"+
 ConsoleColors.RED+"( ___)(  )(  )( \\( ) "+ConsoleColors.RESET+" ( \\/\\/ )(_  _)(_  _)( )_( ) "+ConsoleColors.RED+" ( ___)(  )    /__\\  / __)/ __)\n"+
 ConsoleColors.RED+" )__)  )(__)(  )  (  "+ConsoleColors.RESET+"  )    (  _)(_   )(   ) _ (  "+ConsoleColors.RED+"  )__)  )(__  /(__)\\( (_-.\\__ \\\n"+
-ConsoleColors.RED+"(__)  (______)(_)\\_) "+ConsoleColors.RESET+" (__/\\__)(____) (__) (_) (_) "+ConsoleColors.RED+" (__)  (____)(__)(__)\\___/(___/\n"
+ConsoleColors.RED+"(__)  (______)(_)\\_) "+ConsoleColors.RESET+" (__/\\__)(____) (__) (_) (_) "+ConsoleColors.RED+" (__)  (____)(__)(__)\\___/(___/\n",
+ConsoleColors.BLUE+" ______   __  __     __   __   "+ConsoleColors.YELLOW+"  __     __     __     ______   __  __   "+ConsoleColors.RED+"  ______   __         ______     ______     ______  \n " +
+ConsoleColors.BLUE+"/\\  ___\\/\\ \\/\\ \\   /\\ \"-.\\ \\  "+ConsoleColors.YELLOW+" /\\ \\  _ \\ \\   /\\ \\   /\\__  _\\ /\\ \\_\\ \\  "+ConsoleColors.RED+" /\\  ___\\ /\\ \\       /\\  __ \\   /\\  ___\\   /\\  ___\\  \n" +
+ConsoleColors.BLUE+"\\ \\  __\\ \\ \\ \\_\\ \\  \\ \\ \\-.  \\ "+ConsoleColors.YELLOW+" \\ \\ \\/ \".\\ \\  \\ \\ \\  \\/_/\\ \\/ \\ \\  __ \\ "+ConsoleColors.RED+" \\ \\  __\\ \\ \\ \\____  \\ \\  __ \\  \\ \\ \\__ \\  \\ \\___  \\ \n " +                       
+ConsoleColors.BLUE+"\\ \\_\\    \\ \\_____\\  \\ \\_\\\\\"\\_\\"+ConsoleColors.YELLOW+"  \\ \\__/\".~\\_\\  \\ \\_\\    \\ \\_\\  \\ \\_\\ \\_\\"+ConsoleColors.RED+"  \\ \\_\\    \\ \\_____\\  \\ \\_\\ \\_\\  \\ \\_____\\  \\/\\_____\\ \n" +                       
+ConsoleColors.BLUE+"  \\/_/     \\/_____/   \\/_/ \\/_/"+ConsoleColors.YELLOW+"   \\/_/   \\/_/   \\/_/     \\/_/   \\/_/\\/_/"+ConsoleColors.RED+"   \\/_/     \\/_____/   \\/_/\\/_/   \\/_____/   \\/_____/ \n",
+ConsoleColors.PURPLE+"$$$$$$$$\\ $$\\   $$\\ $$\\   $$\\ "+ConsoleColors.YELLOW+"      $$\\      $$\\ $$$$$$\\ $$$$$$$$\\ $$\\   $$\\  "+ConsoleColors.RED+"     $$$$$$$$\\ $$\\        $$$$$$\\   $$$$$$\\   $$$$$$\\   \n"+
+ConsoleColors.PURPLE+"$$  _____|$$ |  $$ |$$$\\  $$ |"+ConsoleColors.YELLOW+"      $$ | $\\  $$ |\\_$$  _|\\__$$  __|$$ |  $$ | "+ConsoleColors.RED+"     $$  _____|$$ |      $$  __$$\\ $$  __$$\\ $$  __$$\\  \n"+
+ConsoleColors.PURPLE+"$$ |      $$ |  $$ |$$$$\\ $$ |"+ConsoleColors.YELLOW+"      $$ |$$$\\ $$ |  $$ |     $$ |   $$ |  $$ | "+ConsoleColors.RED+"     $$ |      $$ |      $$ /  $$ |$$ /  \\__|$$ /  \\__| \n"+
+ConsoleColors.PURPLE+"$$$$$\\    $$ |  $$ |$$ $$\\$$ |"+ConsoleColors.YELLOW+"      $$ $$ $$\\$$ |  $$ |     $$ |   $$$$$$$$ | "+ConsoleColors.RED+"     $$$$$\\    $$ |      $$$$$$$$ |$$ |$$$$\\ \\$$$$$$\\   \n"+
+ConsoleColors.PURPLE+"$$  __|   $$ |  $$ |$$ \\$$$$ |"+ConsoleColors.YELLOW+"      $$$$  _$$$$ |  $$ |     $$ |   $$  __$$ | "+ConsoleColors.RED+"     $$  __|   $$ |      $$  __$$ |$$ |\\_$$ | \\____$$\\  \n"+
+ConsoleColors.PURPLE+"$$ |      $$ |  $$ |$$ |\\$$$ |"+ConsoleColors.YELLOW+"      $$$  / \\$$$ |  $$ |     $$ |   $$ |  $$ | "+ConsoleColors.RED+"     $$ |      $$ |      $$ |  $$ |$$ |  $$ |$$\\   $$ | \n"+
+ConsoleColors.PURPLE+"$$ |      \\$$$$$$  |$$ | \\$$ |"+ConsoleColors.YELLOW+"      $$  /   \\$$ |$$$$$$\\    $$ |   $$ |  $$ | "+ConsoleColors.RED+"     $$ |      $$$$$$$$\\ $$ |  $$ |\\$$$$$$  |\\$$$$$$  | \n"+
+ConsoleColors.PURPLE+"\\__|       \\______/ \\__|  \\__|"+ConsoleColors.YELLOW+"      \\__/     \\__|\\______|   \\__|   \\__|  \\__| "+ConsoleColors.RED+"     \\__|      \\________|\\__|  \\__| \\______/  \\______/  \n"
+                                                                                                                                    
+
 	};
 	
 	public static String getTitle(){
