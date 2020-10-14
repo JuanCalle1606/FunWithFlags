@@ -59,7 +59,6 @@ public class Main {
 	public static Boolean about(){
 		Util.clear();
 		trace(Texts.getTitle());
-		//Andres, si quiere ponga su nombre completo aqui o lo puede dejar asi
 		trace("  "+ConsoleColors.GREEN+"Fun With Flags Ha sido creado por: \n"+
 			ConsoleColors.YELLOW+"    -Juan Pablo Calle"+ConsoleColors.CYAN+" (https://github.com/JuanCalle1606)\n"+
 			ConsoleColors.YELLOW+"    -Andres Camilo Gomez Orozco"+ConsoleColors.CYAN+ " (https://github.com/AndresCGO)\n"+
