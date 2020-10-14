@@ -1,6 +1,12 @@
 public class Util {
 
+	/// Constiene la cadena que limina la pantalla
 	public static String ClearStr;
+
+	public static String getSpaces(int index) 
+	{ 
+		return repeatString(63-Main.paises[index].length()," ");
+	}
 	/**
 	* Devuelve una cadena repetida n numero de veces
 	*/

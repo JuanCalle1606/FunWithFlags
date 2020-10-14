@@ -8,7 +8,7 @@ public class Main {
 
 	public static void main(String[] args){
 		//Ponemos la cadena que se usa para "Limpiar la pantalla"
-		Util.ClearStr = Util.repeatString(100, "\n");
+		Util.ClearStr = Util.repeatString(250, "\n");
 		Util.clear();
 		//mensaje inicial
 		trace(ConsoleColors.GREEN + "Por favor maximiza la consola para poder ver mejor el juego" + ConsoleColors.RESET);
@@ -31,11 +31,29 @@ public class Main {
 			option = choose(true);
 		}
 		switch(Texts.mainMenu[option-1]){
+			case Texts.KNOWTF:
+				return showAllFlags();
 			case Texts.CLOSE:
 				return close();
 			case Texts.ABOUT:
 				return about();
 		}
+		return true;
+	}
+	private static Boolean showAllFlags(){
+		Util.clear();
+		for(int i=0;i<nBanderas-(nBanderas%2==0?0:1);i+=2){
+			trace(paises[i]+":"+Util.getSpaces(i)+paises[i+1]+":\n");
+			drawTwoFlags(i,i+1);
+			trace("\n");
+		}
+		if(nBanderas%2!=0){
+			trace(paises[nBanderas-1]+":\n");
+			drawFlag(nBanderas-1);
+			trace("\n");
+		}
+		trace(ConsoleColors.RESET+"Pulsa ENTER para Continuar"+ConsoleColors.BLACK,false);
+		ConsoleInput.getString();
 		return true;
 	}
 	public static Boolean about(){

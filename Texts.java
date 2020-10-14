@@ -5,8 +5,10 @@ public class Texts {
 
 	public static final String CLOSE = "Salir";
 	public static final String ABOUT = "Acerca de";
+	public static final String KNOWTF = "Conoce las banderas";
 
 	public static String[] mainMenu = new String[]{
+		KNOWTF,
 		ABOUT,
 		CLOSE
 	};
