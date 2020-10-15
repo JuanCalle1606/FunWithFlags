@@ -6,6 +6,9 @@ public class Main {
 	/// Indica el numero de bandera que hay
 	public static byte nBanderas=0;
 
+	/// Guarda los indices de las banderas que se conocen
+	public static byte[] kBanderas;
+
 	public static void main(String[] args){
 		//Ponemos la cadena que se usa para "Limpiar la pantalla"
 		Util.ClearStr = Util.repeatString(250, "\n");
@@ -42,18 +45,29 @@ public class Main {
 	}
 	private static Boolean showAllFlags(){
 		Util.clear();
-		for(int i=0;i<nBanderas-(nBanderas%2==0?0:1);i+=2){
-			trace(paises[i]+":"+Util.getSpaces(i)+paises[i+1]+":\n");
-			drawTwoFlags(i,i+1);
+		if(kBanderas[0]==0){
+			trace("\t"+ConsoleColors.RED+"Ups!"+ConsoleColors.RESET+", aun no conoces ninguna bandera, empieza a jugar para que sepamos que banderas conoces!\n\n");
+			enter();
+			return true;
+		}
+		byte[] tempFlags=new byte[kBanderas[0]];
+		byte index=0;
+		for(byte j=0;j<nBanderas;j++){
+			if(kBanderas[j+1]==1){
+				tempFlags[index++]=j;
+			}
+		}
+		for(int i=0;i<index-(index%2==0?0:1);i+=2){
+			trace(paises[tempFlags[i]]+":"+Util.getSpaces(tempFlags[i])+paises[tempFlags[i+1]]+":\n");
+			drawTwoFlags(tempFlags[i],tempFlags[i+1]);
 			trace("\n");
 		}
-		if(nBanderas%2!=0){
-			trace(paises[nBanderas-1]+":\n");
-			drawFlag(nBanderas-1);
+		if(index%2!=0){
+			trace(paises[tempFlags[index-1]]+":\n");
+			drawFlag(tempFlags[index-1]);
 			trace("\n");
 		}
-		trace(ConsoleColors.RESET+"Pulsa ENTER para Continuar"+ConsoleColors.BLACK,false);
-		ConsoleInput.getString();
+		enter();
 		return true;
 	}
 	public static Boolean about(){
@@ -65,8 +79,7 @@ public class Main {
 			ConsoleColors.GREEN+"\n  Diseño de las banderas ha sido realizado por distintos contribuidores en:\n"+
 			ConsoleColors.YELLOW+"    https://github.com/xaca/banderas_java/blob/master/recursos/info_banderas.csv\n"
 			);
-		trace(ConsoleColors.RESET+"Pulsa ENTER para Continuar"+ConsoleColors.BLACK,false);
-		ConsoleInput.getString();
+		enter();		
 		return true;
 	}
 	public static Boolean close(){
@@ -82,6 +95,10 @@ public class Main {
 		}
 		trace(ConsoleColors.YELLOW+"Escoge una opción: "+ConsoleColors.RESET, false);
 		return ConsoleInput.getInt();
+	}
+	public static void enter(){
+		trace(ConsoleColors.RESET+"Pulsa ENTER para Continuar"+ConsoleColors.BLACK,false);
+		ConsoleInput.getString();
 	}
 	public static void trace(String txt){
 		trace(txt,true);
@@ -104,8 +121,8 @@ public class Main {
 		int length=fileContent.length,index=0;
 		trace("> Datos cargados! Procesando...");
 		//inicializamos el arreglo al numero de paises que hay
-		paises = new String[length/20];
-		banderas = new String[length/20][19][27];
+		paises=new String[length/20];kBanderas=new byte[(length/20)+1];
+		banderas=new String[length/20][19][27];
 		//agregamos los nombre de los paisese y los patrones de la bandera en sus respectivos arreglos
 		for (short i=0;i<length;i++){
 			//esto ocurre en las lineas que poseen nombres de paises
