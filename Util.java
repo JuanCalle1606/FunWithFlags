@@ -35,7 +35,9 @@ public class Util {
 				ConsoleColors.PURPLE_BACKGROUND+"  "+ConsoleColors.RESET
 			:mat[i].equals("7")?
 				ConsoleColors.CYAN_BACKGROUND+"  "+ConsoleColors.RESET
-			:ConsoleColors.BLACK_BACKGROUND+"  "+ConsoleColors.RESET;
+			:mat[i].equals("8")?
+				ConsoleColors.BLACK_BACKGROUND+"  "+ConsoleColors.RESET
+			:ConsoleColors.BLACK_BACKGROUND_BRIGHT+"  "+ConsoleColors.RESET;
 		}
 	}
 	/**
