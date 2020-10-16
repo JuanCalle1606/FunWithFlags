@@ -56,10 +56,11 @@ public class Main {
 	private static Boolean adivinarBandera(){
 		Util.clear();
 		trace("\t"+ConsoleColors.GREEN+"Listo para conocer las banderas del mundo?\n\n");
-		trace("Objetivo: Dado el nombre de un país, debes seleccionar la bandera de este"+ConsoleColors.RESET);
-		int n=(int)(Math.random()*25+1);
-		System.out.println(n);
-		trace("Cual es la bandera de "+paises[n]+" :");
+		trace("Objetivo: Dado el nombre de un país, debes seleccionar la bandera ."+ConsoleColors.RESET+"\n\n\n");
+		
+		
+		int n=(int)(Math.random()*nBanderas-2);
+		trace("\n Cual es la bandera de "+paises[n]+" :");
 		trace(" 1. ");
 		drawFlag(n);
 		trace(" 2. ");
@@ -67,9 +68,30 @@ public class Main {
 		trace(" 3. ");
 		drawFlag(n+2);
 		trace(" 4. ");
-		drawFlag(n+3);
+        drawFlag(n+3);
+		int opcion=choose(4);
+		switch(opcion){
+			case 1:
+				drawFlag(n);
+				trace(ConsoleColors.GREEN+"Escogiste la opcion Correcta ganas");
+				break;
+			case 2:
+				drawFlag(n+1);
+				trace(ConsoleColors.RED+"Escogiste la opcion incorrecta no ganas");
+				break;
+			case 3:
+				drawFlag(n+2);
+				trace(ConsoleColors.RED+"Escogiste la opcion incorrecta no ganas");
+				break;
+			case 4:
+		        drawFlag(n+3);
+		        trace(ConsoleColors.RED+"Escogiste la opcion incorrecta no ganas");
+		        break;
+			}
 
 			enter();
+		
+
 		
 
 		return true;
