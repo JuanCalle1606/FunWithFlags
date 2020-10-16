@@ -33,6 +33,8 @@ public class Main {
 		trace(Texts.getTitle()+Texts.getMainMenu());
 		int option = choose(false,true,Texts.mainMenu.length);
 		switch(Texts.mainMenu[option-1]){
+			case Texts.GAME1:
+				return adivinarBandera();
 			case Texts.GAME2:
 				return adivinarPais();
 			case Texts.KNOWTF:
@@ -50,6 +52,28 @@ public class Main {
 		byte dificultad=(byte)choose(3);
 		enter();
 		return true;
+	}
+	private static Boolean adivinarBandera(){
+		Util.clear();
+		trace("\t"+ConsoleColors.GREEN+"Listo para conocer las banderas del mundo?\n\n");
+		trace("Objetivo: Dado el nombre de un país, debes seleccionar la bandera de este"+ConsoleColors.RESET);
+		int n=(int)(Math.random()*25+1);
+		System.out.println(n);
+		trace("Cual es la bandera de "+paises[n]+" :");
+		trace(" 1. ");
+		drawFlag(n);
+		trace(" 2. ");
+		drawFlag(n+1);
+		trace(" 3. ");
+		drawFlag(n+2);
+		trace(" 4. ");
+		drawFlag(n+3);
+
+			enter();
+		
+
+		return true;
+
 	}
 	private static Boolean showAllFlags(){
 		Util.clear();
