@@ -15,7 +15,6 @@ public class ConsoleInput{
 		}catch(Exception e)
 		{
 			refreshScanner();
-			return Main.choose(true);
 		}
 		return temp;
 	}

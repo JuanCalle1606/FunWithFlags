@@ -31,11 +31,10 @@ public class Main {
 		Util.clear();
 		//Menu principal del juego
 		trace(Texts.getTitle()+Texts.getMainMenu());
-		int option = choose(false);
-		while(!(option>0&&option<=Texts.mainMenu.length)){
-			option = choose(true);
-		}
+		int option = choose(false,true,Texts.mainMenu.length);
 		switch(Texts.mainMenu[option-1]){
+			case Texts.GAME2:
+				return adivinarPais();
 			case Texts.KNOWTF:
 				return showAllFlags();
 			case Texts.CLOSE:
@@ -43,6 +42,13 @@ public class Main {
 			case Texts.ABOUT:
 				return about();
 		}
+		return true;
+	}
+	private static Boolean adivinarPais(){
+		Util.clear();
+		trace("  "+ConsoleColors.GREEN+"Listo para jugar?\n");
+		trace("Objetivo:Te mostraremos una bandera y debes adivinar el pais");
+		enter();
 		return true;
 	}
 	private static Boolean showAllFlags(){
@@ -89,14 +95,32 @@ public class Main {
 		trace("\t"+ConsoleColors.GREEN+" Gracias por jugar!. "+ConsoleColors.RESET+" Pulsa ENTER para salir."+ConsoleColors.BLACK);
 		return false;
 	}
-	public static int choose(Boolean chooseError){
+	/**
+	 * Le pedimos al usuario un numero entre 1 y un numero dado
+	 */
+	public static int choose(int limit){
+		return choose(false,false,limit);
+	}
+	/**
+	 * Con esta función pedimos al usuario un numero positivo sin limite.
+	 */
+	public static int choose(){
+		return choose(false,false,0);
+	}
+	public static int choose(Boolean chooseError,Boolean isMainMenu,int limit){
 		if(chooseError){
-			Util.clear();
-			trace(Texts.getTitle()+Texts.getMainMenu());
+			if(isMainMenu){
+				Util.clear();
+				trace(Texts.getTitle()+Texts.getMainMenu());
+			}
 			trace(ConsoleColors.RED+"Opción invalida, ingresa otra.");
 		}
 		trace(ConsoleColors.YELLOW+"Escoge una opción: "+ConsoleColors.RESET, false);
-		return ConsoleInput.getInt();
+		int temp = ConsoleInput.getInt();
+		while(limit>0&&(temp>limit||temp<1)){
+			temp=choose(true,isMainMenu,0);
+		}
+		return temp;
 	}
 	public static void enter(){
 		trace(ConsoleColors.RESET+"Pulsa ENTER para Continuar"+ConsoleColors.BLACK,false);
