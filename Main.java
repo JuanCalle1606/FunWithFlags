@@ -52,19 +52,40 @@ public class Main {
 		byte dificultad=(byte)choose(3);
 		Util.clear();
 		byte[] randomFlags=new byte[8];
+		Boolean isCorrect=false;
+		String respuesta="";
 		randomize(randomFlags,nBanderas);
 		trace(ConsoleColors.CYAN+"Intenta adivinar de que pais es esta bandera:\n");
 		drawFlag(randomFlags[0]);
 		trace("\n");
 		switch(dificultad){
 			case 3:
+				trace(ConsoleColors.BLACK_BRIGHT+"No coloques tildes ni caracteres especiales.\n");
+				trace(ConsoleColors.YELLOW+"Ingresa tu respuesta: "+ConsoleColors.RESET,false);
+				respuesta=ConsoleInput.getString().toLowerCase();
+				if(respuesta.equals(paises[randomFlags[0]].toLowerCase())){
+					isCorrect=true;
+					trace(ConsoleColors.GREEN+"\tCorrecto! esta es la bandera de "+respuesta);
+				}
+				else{
+					isCorrect=false;
+					trace(ConsoleColors.RED+"\tIncorrecto! esta no es la bandera de "+paises[randomFlags[0]]);
+				}
 				break;
 			case 2:
 			case 1:{
-				byte[] randomIndex=new byte[4*dificultad];
-				randomize(randomIndex,4*dificultad);
+				byte[] randomIndex=new byte[8/dificultad];
+				randomize(randomIndex,8/dificultad);
+				int opcion=choose(8/dificultad);
 				break;
 			}
+		}
+		Util.clear();
+		if(isCorrect){
+			trace(ConsoleColors.GREEN+"\tCorrecto! esta es la bandera de "+respuesta);
+		}
+		else{
+			trace(ConsoleColors.RED+"\tIncorrecto! esta no es la bandera de "+respuesta);
 		}
 		enter();
 		return true;
