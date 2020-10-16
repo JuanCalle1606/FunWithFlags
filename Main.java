@@ -48,13 +48,32 @@ public class Main {
 	}
 	private static Boolean adivinarPais(){
 		Util.clear();
-		trace("  "+ConsoleColors.GREEN+"Listo para jugar?\n");
+		trace("   "+ConsoleColors.GREEN+"Listo para jugar?\n");
 		trace("Objetivo:Te mostraremos una bandera y debes adivinar el pais");
 		enter();
 		return true;
 	}
 	private static Boolean adivinarBandera(){
 		Util.clear();
+		trace("\t"+ConsoleColors.GREEN+"Listo para conocer las banderas del mundo?\n\n");
+		trace("Objetivo: Dado el nombre de un país, debes seleccionar la bandera de este"+ConsoleColors.RESET);
+		int n=(int)(Math.random()*25+1);
+		System.out.println(n);
+		trace("Cual es la bandera de "+paises[n]+" :");
+		trace(" 1. ");
+		drawFlag(n);
+		trace(" 2. ");
+		drawFlag(n+1);
+		trace(" 3. ");
+		drawFlag(n+2);
+		trace(" 4. ");
+		drawFlag(n+3);
+
+			enter();
+		
+
+		return true;
+
 	}
 	private static Boolean showAllFlags(){
 		Util.clear();
