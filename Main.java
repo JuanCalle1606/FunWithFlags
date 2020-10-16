@@ -46,8 +46,8 @@ public class Main {
 	}
 	private static Boolean adivinarPais(){
 		Util.clear();
-		trace("  "+ConsoleColors.GREEN+"Listo para jugar?\n");
-		trace("Objetivo:Te mostraremos una bandera y debes adivinar el pais");
+		trace(Texts.getAdCountry());
+		byte dificultad=(byte)choose(3);
 		enter();
 		return true;
 	}
@@ -123,7 +123,7 @@ public class Main {
 		return temp;
 	}
 	public static void enter(){
-		trace(ConsoleColors.RESET+"Pulsa ENTER para Continuar"+ConsoleColors.BLACK,false);
+		trace(ConsoleColors.RESET+"\nPulsa ENTER para Continuar"+ConsoleColors.BLACK,false);
 		ConsoleInput.getString();
 	}
 	public static void trace(String txt){

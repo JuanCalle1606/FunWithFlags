@@ -55,6 +55,16 @@ ConsoleColors.PURPLE+"\\__|       \\______/ \\__|  \\__|"+ConsoleColors.YELLOW+"
                                                                                                                                     
 
 	};
+
+	public static String getAdCountry(){
+		return
+		ConsoleColors.GREEN+" Listo para jugar?\n\n"+
+		ConsoleColors.GREEN+" Objetivo:"+ConsoleColors.RESET+"Te mostraremos una bandera y debes adivinar el pais\n\n"+
+		ConsoleColors.GREEN+" Escoge la dificultad:\n\n"+
+		"  "+ConsoleColors.GREEN+"1. Facil:"+ConsoleColors.RESET+" Te daremos 4 opciones posibles para que te sea mas facil acertar.\n"+
+		"  "+ConsoleColors.YELLOW+"2. Normal:"+ConsoleColors.RESET+" Te daremos 8 opciones posibles para que haya mas dificultad.\n"+
+		"  "+ConsoleColors.RED+"3. Dificil:"+ConsoleColors.RESET+" No te daremos opciones si no que tienes que escribir tu mismo la respuesta.\n";
+	}
 	
 	public static String getTitle(){
 		return Titles[(int)(Math.random()*Titles.length)];
