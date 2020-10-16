@@ -1,11 +1,12 @@
 public class Main {
+	/// Contenido original del archivo
+	public static String[] fileContent;
 	/// Esta variable guara los nombre de los paises
 	public static String[] paises;
 	/// Aqui se guardan todas las banderas
 	public static String[][][] banderas;
 	/// Indica el numero de bandera que hay
 	public static byte nBanderas=0;
-
 	/// Guarda los indices de las banderas que se conocen
 	public static byte[] kBanderas;
 
@@ -117,7 +118,7 @@ public class Main {
 		Util.clear();
 		trace(ConsoleColors.GREEN+"> Cargando datos...");
 		//cargamos los archivos
-		String[] fileContent = ConsoleFile.read("recursos/info_banderas.csv");
+		fileContent = ConsoleFile.read("recursos/info_banderas.csv");
 		int length=fileContent.length,index=0;
 		trace("> Datos cargados! Procesando...");
 		//inicializamos el arreglo al numero de paises que hay
