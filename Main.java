@@ -20,6 +20,7 @@ public class Main {
 		ConsoleInput.getString();
 		trace(ConsoleColors.RESET);
 		loadFlags();
+		//debugFlags();
 		while(MainMenu())
 			trace("",false);
 
@@ -154,6 +155,18 @@ public class Main {
 			trace("\t\t",false);
 			for(byte j=0;j<27;j++)
 				trace(banderas[index2][i][j],j==26?true:false);
+		}
+	}
+	private static void debugFlags(){
+		for(int i=0;i<nBanderas-(nBanderas%2==0?0:1);i+=2){
+			trace(paises[i]+":"+Util.getSpaces(i)+paises[i+1]+":\n");
+			drawTwoFlags(i,i+1);
+			trace("\n");
+		}
+		if(nBanderas%2!=0){
+			trace(paises[nBanderas-1]+":\n");
+			drawFlag(nBanderas-1);
+			trace("\n");
 		}
 	}
 }
