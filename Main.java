@@ -33,6 +33,8 @@ public class Main {
 		trace(Texts.getTitle()+Texts.getMainMenu());
 		int option = choose(false,true,Texts.mainMenu.length);
 		switch(Texts.mainMenu[option-1]){
+			case Texts.GAME1:
+				return adivinarBandera();
 			case Texts.GAME2:
 				return adivinarPais();
 			case Texts.KNOWTF:
@@ -50,6 +52,9 @@ public class Main {
 		trace("Objetivo:Te mostraremos una bandera y debes adivinar el pais");
 		enter();
 		return true;
+	}
+	private static Boolean adivinarBandera(){
+		Util.clear();
 	}
 	private static Boolean showAllFlags(){
 		Util.clear();

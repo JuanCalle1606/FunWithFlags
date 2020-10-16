@@ -7,9 +7,11 @@ public class Texts {
 	public static final String ABOUT = "Acerca de";
 	public static final String KNOWTF = "Banderas conocidas";
 	public static final String GAME2 = "Adivina el país";
+	public static final String GAME1 = "Adivina la bandera";
 
 	public static String[] mainMenu = new String[]{
 		GAME2,
+		GAME1,
 		KNOWTF,
 		ABOUT,
 		CLOSE
