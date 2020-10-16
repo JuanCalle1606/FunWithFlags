@@ -53,6 +53,9 @@ public class Main {
 		Util.clear();
 		byte[] randomFlags=new byte[8];
 		randomize(randomFlags,nBanderas);
+		trace(ConsoleColors.CYAN+"Intenta adivinar de que pais es esta bandera:\n");
+		drawFlag(randomFlags[0]);
+		trace("\n");
 		switch(dificultad){
 			case 3:
 				break;
