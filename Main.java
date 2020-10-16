@@ -50,8 +50,41 @@ public class Main {
 		Util.clear();
 		trace(Texts.getAdCountry());
 		byte dificultad=(byte)choose(3);
+		Util.clear();
+		byte[] randomFlags=new byte[8];
+		randomize(randomFlags,nBanderas);
+		switch(dificultad){
+			case 3:
+				break;
+			case 2:
+			case 1:{
+				byte[] randomIndex=new byte[4*dificultad];
+				randomize(randomIndex,4*dificultad);
+				break;
+			}
+		}
 		enter();
 		return true;
+	}
+	private static void randomize(byte[] arr,int limit){
+		int len=arr.length;
+		Boolean isValid=false;
+		byte random;
+		for(byte i=0;i<len;i++){
+			do
+			{
+				isValid=true;
+				random=(byte)(Math.random()*limit);
+				for(byte j=0;j<i;j++){
+					if(random==arr[j]){
+						isValid=false;
+						break;
+					}
+				}
+			}
+			while(!isValid);
+			arr[i]=random;
+		}
 	}
 	private static Boolean adivinarBandera(){
 		Util.clear();
@@ -74,6 +107,15 @@ public class Main {
 
 		return true;
 
+	}
+	/**
+	 * Esta función se llama cuando un jugador adivina una bandera y la agrega a banderas conocidas.
+	 */
+	private static void knowFlag(byte index){
+		if(kBanderas[index+1]==0){
+			kBanderas[index+1]=1;
+			kBanderas[0]++;
+		}
 	}
 	private static Boolean showAllFlags(){
 		Util.clear();
@@ -119,6 +161,7 @@ public class Main {
 		trace("\t"+ConsoleColors.GREEN+" Gracias por jugar!. "+ConsoleColors.RESET+" Pulsa ENTER para salir."+ConsoleColors.BLACK);
 		return false;
 	}
+
 	/**
 	 * Le pedimos al usuario un numero entre 1 y un numero dado
 	 */
@@ -140,8 +183,8 @@ public class Main {
 			trace(ConsoleColors.RED+"Opción invalida, ingresa otra.");
 		}
 		trace(ConsoleColors.YELLOW+"Escoge una opción: "+ConsoleColors.RESET, false);
-		int temp = ConsoleInput.getInt();
-		while(limit>0&&(temp>limit||temp<1)){
+		int temp=ConsoleInput.getInt();
+		while(temp==0||(limit>0&&(temp>limit||temp<1))){
 			temp=choose(true,isMainMenu,0);
 		}
 		return temp;
