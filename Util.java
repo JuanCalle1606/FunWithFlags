@@ -3,6 +3,25 @@ public class Util {
 	/// Constiene la cadena que limina la pantalla
 	public static String ClearStr;
 
+	public static void randomize(byte[] arr,int limit){
+		int len=arr.length;
+		Boolean isValid=true;
+		byte random;
+		for(byte i=0;i<len;i++){
+			do{
+				isValid=true;
+				random=(byte)(Math.random()*limit);
+				for(byte j=0;j<i;j++){
+					if(random==arr[j]){
+						isValid=false;
+						break;
+					}
+				}
+			}
+			while(!isValid);
+			arr[i]=random;
+		}
+	}
 	public static String getSpaces(int index) 
 	{ 
 		return repeatString(63-Main.paises[index].length()," ");

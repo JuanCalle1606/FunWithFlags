@@ -36,7 +36,7 @@ public class Main {
 			case Texts.GAME1:
 				return adivinarBandera();
 			case Texts.GAME2:
-				return adivinarPais();
+				return adivinarPais(true,(byte)0);
 			case Texts.KNOWTF:
 				return showAllFlags();
 			case Texts.CLOSE:
@@ -46,7 +46,7 @@ public class Main {
 		}
 		return true;
 	}
-	private static Boolean adivinarPais(){
+	private static Boolean adivinarPais(Boolean init,byte dif){
 		Util.clear();
 		trace(Texts.getAdCountry());
 		byte dificultad=(byte)choose(3);
@@ -54,7 +54,7 @@ public class Main {
 		byte[] randomFlags=new byte[8];
 		Boolean isCorrect=false;
 		String respuesta="";
-		randomize(randomFlags,nBanderas);
+		Util.randomize(randomFlags,nBanderas);
 		trace(ConsoleColors.CYAN+"Intenta adivinar de que pais es esta bandera:\n");
 		drawFlag(randomFlags[0]);
 		trace("\n");
@@ -74,9 +74,9 @@ public class Main {
 				break;
 			case 2:
 			case 1:{
-				byte[] randomIndex=new byte[8/dificultad];
-				randomize(randomIndex,8/dificultad);
-				int opcion=choose(8/dificultad);
+				byte[] randomIndex=new byte[4*dificultad];
+				Util.randomize(randomIndex,4*dificultad);
+				int opcion=choose(4*dificultad);
 				break;
 			}
 		}
@@ -90,32 +90,12 @@ public class Main {
 		enter();
 		return true;
 	}
-	private static void randomize(byte[] arr,int limit){
-		int len=arr.length;
-		Boolean isValid=false;
-		byte random;
-		for(byte i=0;i<len;i++){
-			do
-			{
-				isValid=true;
-				random=(byte)(Math.random()*limit);
-				for(byte j=0;j<i;j++){
-					if(random==arr[j]){
-						isValid=false;
-						break;
-					}
-				}
-			}
-			while(!isValid);
-			arr[i]=random;
-		}
-	}
 	private static Boolean adivinarBandera(){
 		Util.clear();
 		trace("\t"+ConsoleColors.GREEN+"Listo para conocer las banderas del mundo?\n\n");
 		trace("Objetivo: Dado el nombre de un país, debes seleccionar la bandera ."+ConsoleColors.RESET+"\n\n\n");
 		byte[] randomFlags=new byte[nBanderas];
-		randomize(randomFlags,nBanderas);
+		Util.randomize(randomFlags,nBanderas);
 		int n= (int)(Math.random()*nBanderas+1);
 		//int n=(int)(Math.random()*nBanderas-2);
 		trace("\n Cual es la bandera de "+paises[randomFlags[0]]+" :");
