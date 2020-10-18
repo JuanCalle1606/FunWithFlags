@@ -63,30 +63,28 @@ public class Main {
 				trace(ConsoleColors.BLACK_BRIGHT+"No coloques tildes ni caracteres especiales.\n");
 				trace(ConsoleColors.YELLOW+"Ingresa tu respuesta: "+ConsoleColors.RESET,false);
 				respuesta=ConsoleInput.getString().toLowerCase();
-				if(respuesta.equals(paises[randomFlags[0]].toLowerCase())){
+				if(respuesta.equals(paises[randomFlags[0]].toLowerCase()))
 					isCorrect=true;
-					trace(ConsoleColors.GREEN+"\tCorrecto! esta es la bandera de "+respuesta);
-				}
-				else{
-					isCorrect=false;
-					trace(ConsoleColors.RED+"\tIncorrecto! esta no es la bandera de "+paises[randomFlags[0]]);
-				}
 				break;
 			case 2:
 			case 1:{
 				byte[] randomIndex=new byte[4*dificultad];
 				Util.randomize(randomIndex,4*dificultad);
-				int opcion=choose(4*dificultad);
+				Util.showOptions(randomFlags,randomIndex);
+				byte opcion=(byte)(choose(4*dificultad)-1);
+				respuesta=paises[randomFlags[Util.getPos(randomIndex,opcion)]];
+				if(opcion==randomIndex[0])
+					isCorrect=true;
 				break;
 			}
 		}
 		Util.clear();
 		if(isCorrect){
 			trace(ConsoleColors.GREEN+"\tCorrecto! esta es la bandera de "+respuesta);
+			knowFlag(randomFlags[0]);
 		}
-		else{
+		else
 			trace(ConsoleColors.RED+"\tIncorrecto! esta no es la bandera de "+respuesta);
-		}
 		enter();
 		return true;
 	}
