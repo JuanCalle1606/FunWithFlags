@@ -67,6 +67,13 @@ ConsoleColors.PURPLE+"\\__|       \\______/ \\__|  \\__|"+ConsoleColors.YELLOW+"
 		"  "+ConsoleColors.YELLOW+"2. Normal:"+ConsoleColors.RESET+" Te daremos 8 opciones posibles para que haya mas dificultad.\n"+
 		"  "+ConsoleColors.RED+"3. Dificil:"+ConsoleColors.RESET+" No te daremos opciones si no que tienes que escribir tu mismo la respuesta.\n";
 	}
+
+
+	public static String getAdFlag(){
+		return
+		"\t"+ConsoleColors.GREEN+"Listo para conocer las banderas del mundo?\n\n"+
+		ConsoleColors.PURPLE+"Objetivo:"+ConsoleColors.YELLOW+"Te mostraremos 4 Banderas y tu tienes que adivinar el pais "+ConsoleColors.RESET;
+	}
 	
 	public static String getTitle(){
 		return Titles[(int)(Math.random()*Titles.length)];

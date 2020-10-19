@@ -90,12 +90,10 @@ public class Main {
 	}
 	private static Boolean adivinarBandera(){
 		Util.clear();
-		trace("\t"+ConsoleColors.GREEN+"Listo para conocer las banderas del mundo?\n\n");
-		trace("Objetivo: Dado el nombre de un país, debes seleccionar la bandera ."+ConsoleColors.RESET+"\n\n\n");
+		trace(Texts.getAdFlag());
 		byte[] randomFlags=new byte[nBanderas];
 		Util.randomize(randomFlags,nBanderas);
-		int n= (int)(Math.random()*nBanderas+1);
-		//int n=(int)(Math.random()*nBanderas-2);
+
 		trace("\n Cual es la bandera de "+paises[randomFlags[0]]+" :");
 		trace(" 1. ");
 		drawFlag(randomFlags[0]);
@@ -113,15 +111,8 @@ public class Main {
 				knowFlag(randomFlags[0]);
 				break;
 			case 2:
-				drawFlag(randomFlags[3]);
-				trace(ConsoleColors.RED+"Escogiste la opcion incorrecta no ganas");
-				break;
 			case 3:
-				drawFlag(randomFlags[9]);
-				trace(ConsoleColors.RED+"Escogiste la opcion incorrecta no ganas");
-				break;
 			case 4:
-		        drawFlag(randomFlags[20]);
 		        trace(ConsoleColors.RED+"Escogiste la opcion incorrecta no ganas");
 		        break;
 			}
