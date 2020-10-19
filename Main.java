@@ -110,6 +110,7 @@ public class Main {
 			case 1:
 				drawFlag(randomFlags[0]);
 				trace(ConsoleColors.GREEN+"Escogiste la opcion Correcta ganas");
+				knowFlag(randomFlags[0]);
 				break;
 			case 2:
 				drawFlag(randomFlags[3]);
