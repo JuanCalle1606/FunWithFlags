@@ -61,11 +61,13 @@ public class Main {
 		trace("\n");
 		switch(dificultad){
 			case 3:
-				trace(ConsoleColors.BLACK_BRIGHT+"No coloques tildes ni caracteres especiales.\n");
+				trace(ConsoleColors.BLACK_BRIGHT+"No coloques tildes ni caracteres especiales.\nEscribe 0 o \"salir\" para salir.\n");
 				trace(ConsoleColors.YELLOW+"Ingresa tu respuesta: "+ConsoleColors.RESET,false);
 				respuesta=ConsoleInput.getString().toLowerCase();
 				if(respuesta.equals(paises[randomFlags[0]].toLowerCase()))
 					isCorrect=true;
+				else if(respuesta.equals("0")||respuesta.equals("salir"))
+					return true;
 				break;
 			case 2:
 			case 1:{
@@ -108,62 +110,40 @@ public class Main {
 		trace("\n\n");
 		int opcion=choose(4);
 		 switch(opcion){
-		 	case 1:
-		 		if(randomFlags[0]==opciones[0])
-		 			{
-		 				respuesta=true;
-		 	    	}
-		 	    	break;
-		 	case 2:
-		 		if(randomFlags[0]==opciones[1])
-		 			{
-		 				respuesta=true;
-		 	    	}
-		 	    	break;
-		 	case 3:
-		 		if(randomFlags[0]==opciones[2])
-		 			{
-		 				respuesta=true;
-		 	    	}
-		 	    	break;
-		 	case 4:
-		 		if(randomFlags[0]==opciones[3])
-		 			{
-		 				respuesta=true;
-		 	    	}
-		  			break;
-			}
-
-			if(respuesta==true)
-			{
-				trace("\n \t"+ConsoleColors.GREEN+"Correcto. Esa es la bandera de "+paises[randomFlags[0]]);
-				knowFlag(randomFlags[0]);
-			}
-			else
-			{
-				trace("\n \t"+ConsoleColors.RED+"Incorrecto. Esa no es la bandera de "+paises[randomFlags[0]]);
-
-			}
-		
-
-			enter();
-		
-
-		
-
+			case 1:
+				if(randomFlags[0]==opciones[0])
+					respuesta=true;
+				break;
+			case 2:
+				if(randomFlags[0]==opciones[1])
+					respuesta=true;
+				break;
+			case 3:
+				if(randomFlags[0]==opciones[2])
+					respuesta=true;
+				break;
+			case 4:
+				if(randomFlags[0]==opciones[3])
+					respuesta=true;
+				break;
+		}
+		if(respuesta==true){
+			trace("\n \t"+ConsoleColors.GREEN+"Correcto. Esa es la bandera de "+paises[randomFlags[0]]);
+			knowFlag(randomFlags[0]);
+		}
+		else
+			trace("\n \t"+ConsoleColors.RED+"Incorrecto. Esa no es la bandera de "+paises[randomFlags[0]]);
+		enter();
 		return true;
-
 	}
 	public static int[] desorganizararray(int[] array){
 		Random rgen = new Random(); 			
- 
 		for (int i=0; i<array.length; i++) {
-		    int randomPosition = rgen.nextInt(array.length);
-		    int temp = array[i];
-		    array[i] = array[randomPosition];
-		    array[randomPosition] = temp;
+			int randomPosition = rgen.nextInt(array.length);
+			int temp = array[i];
+			array[i] = array[randomPosition];
+			array[randomPosition] = temp;
 		}
- 
 		return array;
 	}
 
