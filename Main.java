@@ -72,11 +72,12 @@ public class Main {
 				byte[] randomIndex=new byte[4*dificultad];
 				Util.randomize(randomIndex,4*dificultad);
 				Util.showOptions(randomFlags,randomIndex);
-				byte opcion=(byte)(choose(4*dificultad)-1);
+				byte opcion=(byte)(choose(4*dificultad+1)-1);
 				respuesta=paises[randomFlags[Util.getPos(randomIndex,opcion)]];
 				if(opcion==randomIndex[0])
 					isCorrect=true;
-				break;
+				else if(opcion==4*dificultad)
+					return true;
 			}
 		}
 		Util.clear();

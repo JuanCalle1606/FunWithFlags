@@ -7,14 +7,14 @@ public class Util {
 		byte len=(byte)index.length;
 		String cFlag="";
 		Main.trace("");
-		byte sep=(byte)(len==4?2:4);
-		for(byte i=0;i<len;i++){
+		byte sep=(byte)(len==4?2:4),i;
+		for(i=0;i<len;i++){
 			cFlag=Main.paises[flags[getPos(index,i)]];
 			Main.trace(ConsoleColors.GREEN+(i+1)+". "+
 			ConsoleColors.RESET+((i+1)%sep==0?cFlag:addSpaces(cFlag,25)),
 			(i+1)%sep==0?true:false);
 		}
-		Main.trace("");
+		Main.trace(ConsoleColors.GREEN+(i+1)+". "+ConsoleColors.RESET+"Salir\n");
 	}
 	public static byte getPos(byte[] index,byte flag){
 		byte len=(byte)index.length;
