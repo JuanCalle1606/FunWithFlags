@@ -1,3 +1,4 @@
+import java.util.*;
 public class Main {
 	/// Contenido original del archivo
 	public static String[] fileContent;
@@ -93,29 +94,20 @@ public class Main {
 		trace(Texts.getAdFlag());
 		byte[] randomFlags=new byte[nBanderas];
 		Util.randomize(randomFlags,nBanderas);
-
+		int[] opciones={randomFlags[0],randomFlags[1],randomFlags[2],randomFlags[3]};
+		desorganizararray(opciones);
 		trace("\n Cual es la bandera de "+paises[randomFlags[0]]+" :");
 		trace(" 1. ");
-		drawFlag(randomFlags[0]);
+		drawFlag(opciones[0]);
 		trace(" 2. ");
-		drawFlag(randomFlags[3]);
+		drawFlag(opciones[1]);
 		trace(" 3. ");
-		drawFlag(randomFlags[9]);
+		drawFlag(opciones[2]);
 		trace(" 4. ");
-        drawFlag(randomFlags[20]);
+        drawFlag(opciones[3]);
 		int opcion=choose(4);
-		switch(opcion){
-			case 1:
-				drawFlag(randomFlags[0]);
-				trace(ConsoleColors.GREEN+"Escogiste la opcion Correcta ganas");
-				knowFlag(randomFlags[0]);
-				break;
-			case 2:
-			case 3:
-			case 4:
-		        trace(ConsoleColors.RED+"Escogiste la opcion incorrecta no ganas");
-		        break;
-			}
+		
+		
 
 			enter();
 		
@@ -125,6 +117,20 @@ public class Main {
 		return true;
 
 	}
+	public static int[] desorganizararray(int[] array){
+		Random rgen = new Random(); 			
+ 
+		for (int i=0; i<array.length; i++) {
+		    int randomPosition = rgen.nextInt(array.length);
+		    int temp = array[i];
+		    array[i] = array[randomPosition];
+		    array[randomPosition] = temp;
+		}
+ 
+		return array;
+	}
+
+	
 	/**
 	 * Esta función se llama cuando un jugador adivina una bandera y la agrega a banderas conocidas.
 	 */
