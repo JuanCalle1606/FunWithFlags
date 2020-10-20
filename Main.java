@@ -99,14 +99,12 @@ public class Main {
 		int[] opciones={randomFlags[0],randomFlags[1],randomFlags[2],randomFlags[3]};
 		desorganizararray(opciones);
 		trace("\n Cual es la bandera de "+paises[randomFlags[0]]+" :");
-		trace(" 1. ");
-		drawFlag(opciones[0]);
-		trace(" 2. ");
-		drawFlag(opciones[1]);
-		trace(" 3. ");
-		drawFlag(opciones[2]);
-		trace(" 4. ");
-        drawFlag(opciones[3]);
+		trace("1.                                                              2.\n");
+		drawTwoFlags(opciones[0],opciones[1]);
+		trace("\n");
+		trace("3.                                                              4.\n");
+		drawTwoFlags(opciones[2],opciones[3]);
+		trace("\n\n");
 		int opcion=choose(4);
 		 switch(opcion){
 		 	case 1:
