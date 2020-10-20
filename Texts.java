@@ -55,6 +55,13 @@ ConsoleColors.PURPLE+"$$ |      $$ |  $$ |$$ |\\$$$ |"+ConsoleColors.YELLOW+"   
 ConsoleColors.PURPLE+"$$ |      \\$$$$$$  |$$ | \\$$ |"+ConsoleColors.YELLOW+"      $$  /   \\$$ |$$$$$$\\    $$ |   $$ |  $$ | "+ConsoleColors.RED+"     $$ |      $$$$$$$$\\ $$ |  $$ |\\$$$$$$  |\\$$$$$$  | \n"+
 ConsoleColors.PURPLE+"\\__|       \\______/ \\__|  \\__|"+ConsoleColors.YELLOW+"      \\__/     \\__|\\______|   \\__|   \\__|  \\__| "+ConsoleColors.RED+"     \\__|      \\________|\\__|  \\__| \\______/  \\______/  \n"
 	};
+	private static String[] ExitTitle=new String[]{
+		ConsoleColors.GREEN+"   _   _____             _                              _                    __\n"+
+        ConsoleColors.GREEN+"  (_) / ___/______ _____(_)__ ____   ___  ___  ____    (_)_ _____ ____ _____/ /\n"+
+        ConsoleColors.GREEN+" / / / (_ / __/ _ `/ __/ / _ `(_-<  / _ \\/ _ \\/ __/   / / // / _ `/ _ `/ __/_/ \n"+
+        ConsoleColors.GREEN+"/_/  \\___/_/  \\_,_/\\__/_/\\_,_/___/ / .__/\\___/_/   __/ /\\_,_/\\_, /\\_,_/_/ (_)  \n"+
+        ConsoleColors.GREEN+"                                  /_/             |___/     /___/              "
+	};
 	public static String getAdCountry(){
 		return
 		ConsoleColors.GREEN+" Listo para jugar?\n\n"+
@@ -68,6 +75,11 @@ ConsoleColors.PURPLE+"\\__|       \\______/ \\__|  \\__|"+ConsoleColors.YELLOW+"
 		return
 		"\t"+ConsoleColors.GREEN+"Listo para conocer las banderas del mundo?\n\n"+
 		ConsoleColors.PURPLE+"Objetivo:"+ConsoleColors.YELLOW+"Te mostraremos 4 Banderas y tu tienes que adivinar el pais "+ConsoleColors.RESET;
+	}
+	public static String getExit(){
+		return ExitTitle[0];
+        
+
 	}
 	public static String getTitle(){
 		return Titles[(int)(Math.random()*Titles.length)];

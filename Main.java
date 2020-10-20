@@ -195,7 +195,8 @@ public class Main {
 	}
 	public static Boolean close(){
 		Util.clear();
-		trace("\t"+ConsoleColors.GREEN+" Gracias por jugar!. "+ConsoleColors.RESET+" Pulsa ENTER para salir."+ConsoleColors.BLACK);
+		trace(Texts.getExit());
+		trace("\t"+ConsoleColors.RESET+" Pulsa ENTER para salir."+ConsoleColors.BLACK);
 		return false;
 	}
 	/**
