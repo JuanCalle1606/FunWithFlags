@@ -138,7 +138,7 @@ public class Main {
 			if(respuesta==true)
 			{
 				trace("\n \t"+ConsoleColors.GREEN+"Correcto. Esa es la bandera de "+paises[randomFlags[0]]);
-				
+				knowFlag(randomFlags[0]);
 			}
 			else
 			{
