@@ -91,6 +91,8 @@ public class Main {
 	}
 	private static Boolean adivinarBandera(){
 		Util.clear();
+		int i=0;
+		Boolean respuesta=false;
 		trace(Texts.getAdFlag());
 		byte[] randomFlags=new byte[nBanderas];
 		Util.randomize(randomFlags,nBanderas);
@@ -106,7 +108,43 @@ public class Main {
 		trace(" 4. ");
         drawFlag(opciones[3]);
 		int opcion=choose(4);
-		
+		 switch(opcion){
+		 	case 1:
+		 		if(randomFlags[0]==opciones[0])
+		 			{
+		 				respuesta=true;
+		 	    	}
+		 	    	break;
+		 	case 2:
+		 		if(randomFlags[0]==opciones[1])
+		 			{
+		 				respuesta=true;
+		 	    	}
+		 	    	break;
+		 	case 3:
+		 		if(randomFlags[0]==opciones[2])
+		 			{
+		 				respuesta=true;
+		 	    	}
+		 	    	break;
+		 	case 4:
+		 		if(randomFlags[0]==opciones[3])
+		 			{
+		 				respuesta=true;
+		 	    	}
+		  			break;
+			}
+
+			if(respuesta==true)
+			{
+				trace("\n \t"+ConsoleColors.GREEN+"Correcto. Esa es la bandera de "+paises[randomFlags[0]]);
+				
+			}
+			else
+			{
+				trace("\n \t"+ConsoleColors.RED+"Incorrecto. Esa no es la bandera de "+paises[randomFlags[0]]);
+
+			}
 		
 
 			enter();
