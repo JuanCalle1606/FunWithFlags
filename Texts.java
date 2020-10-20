@@ -56,10 +56,10 @@ ConsoleColors.PURPLE+"$$ |      \\$$$$$$  |$$ | \\$$ |"+ConsoleColors.YELLOW+"  
 ConsoleColors.PURPLE+"\\__|       \\______/ \\__|  \\__|"+ConsoleColors.YELLOW+"      \\__/     \\__|\\______|   \\__|   \\__|  \\__| "+ConsoleColors.RED+"     \\__|      \\________|\\__|  \\__| \\______/  \\______/  \n"
 	};
 	private static String[] ExitTitle=new String[]{
-		ConsoleColors.GREEN+"   _   _____             _                              _                    __\n"+
-        ConsoleColors.GREEN+"  (_) / ___/______ _____(_)__ ____   ___  ___  ____    (_)_ _____ ____ _____/ /\n"+
-        ConsoleColors.GREEN+" / / / (_ / __/ _ `/ __/ / _ `(_-<  / _ \\/ _ \\/ __/   / / // / _ `/ _ `/ __/_/ \n"+
-        ConsoleColors.GREEN+"/_/  \\___/_/  \\_,_/\\__/_/\\_,_/___/ / .__/\\___/_/   __/ /\\_,_/\\_, /\\_,_/_/ (_)  \n"+
+		ConsoleColors.GREEN+"   _   _____             _                              _                    __       	 					\n"+
+        ConsoleColors.GREEN+"  (_) / ___/______ _____(_)__ ____   ___  ___  ____    (_)_ _____ ____ _____/ /  /\\_/\\			\n"+
+        ConsoleColors.GREEN+" / / / (_ / __/ _ `/ __/ / _ `(_-<  / _ \\/ _ \\/ __/   / / // / _ `/ _ `/ __/_/  ( o.o )			\n"+
+        ConsoleColors.GREEN+"/_/  \\___/_/  \\_,_/\\__/_/\\_,_/___/ / .__/\\___/_/   __/ /\\_,_/\\_, /\\_,_/_/ (_)  	 > ^ <			\n"+
         ConsoleColors.GREEN+"                                  /_/             |___/     /___/              "
 	};
 	public static String getAdCountry(){
