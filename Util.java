@@ -11,7 +11,7 @@ public class Util {
 		for(i=0;i<len;i++){
 			cFlag=Main.paises[flags[getPos(index,i)]];
 			Main.trace(ConsoleColors.GREEN+(i+1)+". "+
-			ConsoleColors.RESET+((i+1)%sep==0?cFlag:addSpaces(cFlag,25)),
+			ConsoleColors.RESET+addSpaces(cFlag,25),
 			(i+1)%sep==0?true:false);
 		}
 		Main.trace(ConsoleColors.GREEN+(i+1)+". "+ConsoleColors.RESET+"Salir\n");
@@ -27,7 +27,7 @@ public class Util {
 		String temp=txt;
 		while(temp.length()<len)
 			temp+=" ";
-		return temp;
+		return convertToValid(temp);
 	}
 	public static void randomize(byte[] arr,int limit){
 		int len=arr.length;
@@ -47,6 +47,13 @@ public class Util {
 			while(!isValid);
 			arr[i]=random;
 		}
+	}
+	public static String convertToValid(String name){
+		String temp=name;
+		byte len=(byte)Texts.charCodes.length;
+		for(byte i=0;i<len;i++)
+			temp=temp.replace(""+i,Texts.charCodes[i]);
+		return temp;
 	}
 	public static String getSpaces(int index){ 
 		return repeatString(63-Main.paises[index].length()," ");
