@@ -7,33 +7,12 @@ public class Util {
 		byte len=(byte)index.length;
 		String cFlag="";
 		Main.trace("");
-		if(len==4){
-			cFlag=Main.paises[flags[getPos(index,(byte)0)]];
-			Main.trace(ConsoleColors.GREEN+"1. "+ConsoleColors.RESET+addSpaces(cFlag,25),false);
-			cFlag=Main.paises[flags[getPos(index,(byte)1)]];
-			Main.trace(ConsoleColors.GREEN+"2. "+ConsoleColors.RESET+cFlag);
-			cFlag=Main.paises[flags[getPos(index,(byte)2)]];
-			Main.trace(ConsoleColors.GREEN+"3. "+ConsoleColors.RESET+addSpaces(cFlag,25),false);
-			cFlag=Main.paises[flags[getPos(index,(byte)3)]];
-			Main.trace(ConsoleColors.GREEN+"4. "+ConsoleColors.RESET+cFlag);
-		}
-		else{
-			cFlag=Main.paises[flags[getPos(index,(byte)0)]];
-			Main.trace(ConsoleColors.GREEN+"1. "+ConsoleColors.RESET+addSpaces(cFlag,25),false);
-			cFlag=Main.paises[flags[getPos(index,(byte)1)]];
-			Main.trace(ConsoleColors.GREEN+"2. "+ConsoleColors.RESET+addSpaces(cFlag,25),false);
-			cFlag=Main.paises[flags[getPos(index,(byte)2)]];
-			Main.trace(ConsoleColors.GREEN+"3. "+ConsoleColors.RESET+addSpaces(cFlag,25),false);
-			cFlag=Main.paises[flags[getPos(index,(byte)3)]];
-			Main.trace(ConsoleColors.GREEN+"4. "+ConsoleColors.RESET+cFlag);
-			cFlag=Main.paises[flags[getPos(index,(byte)4)]];
-			Main.trace(ConsoleColors.GREEN+"5. "+ConsoleColors.RESET+addSpaces(cFlag,25),false);
-			cFlag=Main.paises[flags[getPos(index,(byte)5)]];
-			Main.trace(ConsoleColors.GREEN+"6. "+ConsoleColors.RESET+addSpaces(cFlag,25),false);
-			cFlag=Main.paises[flags[getPos(index,(byte)6)]];
-			Main.trace(ConsoleColors.GREEN+"7. "+ConsoleColors.RESET+addSpaces(cFlag,25),false);
-			cFlag=Main.paises[flags[getPos(index,(byte)7)]];
-			Main.trace(ConsoleColors.GREEN+"8. "+ConsoleColors.RESET+cFlag);
+		byte sep=(byte)(len==4?2:4);
+		for(byte i=0;i<len;i++){
+			cFlag=Main.paises[flags[getPos(index,i)]];
+			Main.trace(ConsoleColors.GREEN+(i+1)+". "+
+			ConsoleColors.RESET+((i+1)%sep==0?cFlag:addSpaces(cFlag,25)),
+			(i+1)%sep==0?true:false);
 		}
 		Main.trace("");
 	}
