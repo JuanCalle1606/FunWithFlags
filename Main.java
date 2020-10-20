@@ -2,7 +2,7 @@ import java.util.*;
 public class Main {
 	/// Contenido original del archivo
 	public static String[] fileContent;
-	/// Esta variable guara los nombre de los paises
+	/// Esta variable guarda los nombre de los paises
 	public static String[] paises;
 	/// Aqui se guardan todas las banderas
 	public static String[][][] banderas;
@@ -10,7 +10,6 @@ public class Main {
 	public static byte nBanderas=0;
 	/// Guarda los indices de las banderas que se conocen
 	public static byte[] kBanderas;
-
 	public static void main(String[] args){
 		//Ponemos la cadena que se usa para "Limpiar la pantalla"
 		Util.ClearStr = Util.repeatString(250, "\n");
@@ -64,7 +63,7 @@ public class Main {
 				trace(ConsoleColors.BLACK_BRIGHT+"No coloques tildes ni caracteres especiales.\nEscribe 0 o \"salir\" para salir.\n");
 				trace(ConsoleColors.YELLOW+"Ingresa tu respuesta: "+ConsoleColors.RESET,false);
 				respuesta=ConsoleInput.getString().toLowerCase();
-				if(respuesta.equals(paises[randomFlags[0]].toLowerCase()))
+				if(respuesta.equals(pais(paises[0]).toLowerCase()))
 					isCorrect=true;
 				else if(respuesta.equals("0")||respuesta.equals("salir"))
 					return true;
@@ -75,7 +74,7 @@ public class Main {
 				Util.randomize(randomIndex,4*dificultad);
 				Util.showOptions(randomFlags,randomIndex);
 				byte opcion=(byte)(choose(4*dificultad+1)-1);
-				respuesta=paises[randomFlags[Util.getPos(randomIndex,opcion)]];
+				respuesta=pais(randomFlags[Util.getPos(randomIndex,opcion)]);
 				if(opcion==randomIndex[0])
 					isCorrect=true;
 				else if(opcion==4*dificultad)
@@ -101,7 +100,7 @@ public class Main {
 		Util.randomize(randomFlags,nBanderas);
 		int[] opciones={randomFlags[0],randomFlags[1],randomFlags[2],randomFlags[3]};
 		desorganizararray(opciones);
-		trace("\n Cual es la bandera de "+paises[randomFlags[0]]+" :");
+		trace("\n Cual es la bandera de "+pais(randomFlags[0])+" :");
 		trace("1.                                                              2.\n");
 		drawTwoFlags(opciones[0],opciones[1]);
 		trace("\n");
@@ -128,11 +127,11 @@ public class Main {
 				break;
 		}
 		if(respuesta==true){
-			trace("\n \t"+ConsoleColors.GREEN+"Correcto. Esa es la bandera de "+paises[randomFlags[0]]);
+			trace("\n \t"+ConsoleColors.GREEN+"Correcto. Esa es la bandera de "+pais(randomFlags[0]));
 			knowFlag(randomFlags[0]);
 		}
 		else
-			trace("\n \t"+ConsoleColors.RED+"Incorrecto. Esa no es la bandera de "+paises[randomFlags[0]]);
+			trace("\n \t"+ConsoleColors.RED+"Incorrecto. Esa no es la bandera de "+pais(randomFlags[0]));
 		enter();
 		return true;
 	}
@@ -146,8 +145,6 @@ public class Main {
 		}
 		return array;
 	}
-
-	
 	/**
 	 * Esta función se llama cuando un jugador adivina una bandera y la agrega a banderas conocidas.
 	 */
@@ -172,12 +169,12 @@ public class Main {
 			}
 		}
 		for(int i=0;i<index-(index%2==0?0:1);i+=2){
-			trace(paises[tempFlags[i]]+":"+Util.getSpaces(tempFlags[i])+paises[tempFlags[i+1]]+":\n");
+			trace(pais(tempFlags[i])+":"+Util.getSpaces(tempFlags[i])+pais(tempFlags[i+1])+":\n");
 			drawTwoFlags(tempFlags[i],tempFlags[i+1]);
 			trace("\n");
 		}
 		if(index%2!=0){
-			trace(paises[tempFlags[index-1]]+":\n");
+			trace(pais(tempFlags[index-1])+":\n");
 			drawFlag(tempFlags[index-1]);
 			trace("\n");
 		}
@@ -201,7 +198,6 @@ public class Main {
 		trace("\t"+ConsoleColors.GREEN+" Gracias por jugar!. "+ConsoleColors.RESET+" Pulsa ENTER para salir."+ConsoleColors.BLACK);
 		return false;
 	}
-
 	/**
 	 * Le pedimos al usuario un numero entre 1 y un numero dado
 	 */
@@ -242,6 +238,9 @@ public class Main {
 		else
 			System.out.print(txt);
 	}
+	public static String pais(byte index){
+		return Util.convertToValid(paises[index]);
+	}
 	/**
 	 * Esta función carga el archivo .csv y guarda los contenidos de las banderas
 	 */
@@ -259,11 +258,10 @@ public class Main {
 		//agregamos los nombre de los paisese y los patrones de la bandera en sus respectivos arreglos
 		for (short i=0;i<length;i++){
 			//esto ocurre en las lineas que poseen nombres de paises
-			if(i%20==0)
-			{
+			if(i%20==0){
 				//guardamos el nombre del pais
 				paises[i/20]=fileContent[i].substring(0,fileContent[i].indexOf(";"));
-				trace("> Cargando bandera de "+paises[i/20]);
+				trace("> Cargando bandera de "+pais((byte)(i/20)));
 				index=0;nBanderas++;
 			}
 			else{
@@ -289,13 +287,13 @@ public class Main {
 		}
 	}
 	private static void debugFlags(){
-		for(int i=0;i<nBanderas-(nBanderas%2==0?0:1);i+=2){
-			trace(paises[i]+":"+Util.getSpaces(i)+paises[i+1]+":\n");
+		for(byte i=0;i<nBanderas-(nBanderas%2==0?0:1);i+=2){
+			trace(pais(i)+":"+Util.getSpaces(i)+pais((byte)(i+1))+":\n");
 			drawTwoFlags(i,i+1);
 			trace("\n");
 		}
 		if(nBanderas%2!=0){
-			trace(paises[nBanderas-1]+":\n");
+			trace(pais((byte)(nBanderas-1))+":\n");
 			drawFlag(nBanderas-1);
 			trace("\n");
 		}

@@ -3,20 +3,18 @@
  */
 public class Texts {
 
-	public static final String CLOSE = "Salir";
-	public static final String ABOUT = "Acerca de";
-	public static final String KNOWTF = "Banderas conocidas";
-	public static final String GAME2 = "Adivina el país";
-	public static final String GAME1 = "Adivina la bandera";
-
-	public static String[] mainMenu = new String[]{
+	public static final String CLOSE="Salir";
+	public static final String ABOUT="Acerca de";
+	public static final String KNOWTF="Banderas conocidas";
+	public static final String GAME2="Adivina el país";
+	public static final String GAME1="Adivina la bandera";
+	public static String[] mainMenu=new String[]{
 		GAME2,
 		GAME1,
 		KNOWTF,
 		ABOUT,
 		CLOSE
 	};
-
 	public static String getMainMenu(){
 		String temp="\n";int len=mainMenu.length;
 		for(int i=0;i<len;i++){
@@ -24,8 +22,10 @@ public class Texts {
 		}
 		return temp;
 	}
-
-	private static String[] Titles = new String[]{
+	public static String[] charCodes=new String[]{
+		"ñ"
+	};
+	private static String[] Titles=new String[]{
 ConsoleColors.YELLOW+"___________            "+ConsoleColors.BLUE+"  __      __.__  __  .__     "+ConsoleColors.RED+" ___________.__                        \n"+
 ConsoleColors.YELLOW+"\\_   _____/_ __  ____  "+ConsoleColors.BLUE+" /  \\    /  \\__|/  |_|  |__  "+ConsoleColors.RED+" \\_   _____/|  | _____     ____  ______\n"+
 ConsoleColors.YELLOW+" |    __)|  |  \\/    \\ "+ConsoleColors.BLUE+" \\   \\/\\/   /  \\   __\\  |  \\ "+ConsoleColors.RED+"  |    __)  |  | \\__  \\   / ___\\/  ___/\n"+
@@ -54,10 +54,7 @@ ConsoleColors.PURPLE+"$$  __|   $$ |  $$ |$$ \\$$$$ |"+ConsoleColors.YELLOW+"   
 ConsoleColors.PURPLE+"$$ |      $$ |  $$ |$$ |\\$$$ |"+ConsoleColors.YELLOW+"      $$$  / \\$$$ |  $$ |     $$ |   $$ |  $$ | "+ConsoleColors.RED+"     $$ |      $$ |      $$ |  $$ |$$ |  $$ |$$\\   $$ | \n"+
 ConsoleColors.PURPLE+"$$ |      \\$$$$$$  |$$ | \\$$ |"+ConsoleColors.YELLOW+"      $$  /   \\$$ |$$$$$$\\    $$ |   $$ |  $$ | "+ConsoleColors.RED+"     $$ |      $$$$$$$$\\ $$ |  $$ |\\$$$$$$  |\\$$$$$$  | \n"+
 ConsoleColors.PURPLE+"\\__|       \\______/ \\__|  \\__|"+ConsoleColors.YELLOW+"      \\__/     \\__|\\______|   \\__|   \\__|  \\__| "+ConsoleColors.RED+"     \\__|      \\________|\\__|  \\__| \\______/  \\______/  \n"
-                                                                                                                                    
-
 	};
-
 	public static String getAdCountry(){
 		return
 		ConsoleColors.GREEN+" Listo para jugar?\n\n"+
@@ -67,14 +64,11 @@ ConsoleColors.PURPLE+"\\__|       \\______/ \\__|  \\__|"+ConsoleColors.YELLOW+"
 		"  "+ConsoleColors.YELLOW+"2. Normal:"+ConsoleColors.RESET+" Te daremos 8 opciones posibles para que haya mas dificultad.\n"+
 		"  "+ConsoleColors.RED+"3. Dificil:"+ConsoleColors.RESET+" No te daremos opciones si no que tienes que escribir tu mismo la respuesta.\n";
 	}
-
-
 	public static String getAdFlag(){
 		return
 		"\t"+ConsoleColors.GREEN+"Listo para conocer las banderas del mundo?\n\n"+
 		ConsoleColors.PURPLE+"Objetivo:"+ConsoleColors.YELLOW+"Te mostraremos 4 Banderas y tu tienes que adivinar el pais "+ConsoleColors.RESET;
 	}
-	
 	public static String getTitle(){
 		return Titles[(int)(Math.random()*Titles.length)];
 	}
