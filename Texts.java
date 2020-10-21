@@ -71,6 +71,12 @@ ConsoleColors.PURPLE+"\\__|       \\______/ \\__|  \\__|"+ConsoleColors.YELLOW+"
 		"  "+ConsoleColors.YELLOW+"2. Normal:"+ConsoleColors.RESET+" Te daremos 8 opciones posibles para que haya mas dificultad.\n"+
 		"  "+ConsoleColors.RED+"3. Dificil:"+ConsoleColors.RESET+" No te daremos opciones si no que tienes que escribir tu mismo la respuesta.\n";
 	}
+	public static String getAdCountryContinue(){
+		return ConsoleColors.CYAN+"\nDeseas seguir jugando?"+ConsoleColors.BLACK_BRIGHT+"(se mantiene la dificultad)\n\n"+
+		ConsoleColors.GREEN+" 1."+ConsoleColors.RESET+"si, jugar una vez mas."+
+		ConsoleColors.GREEN+"\n 2."+ConsoleColors.RESET+"si, jugar 5 veces mas."+
+		ConsoleColors.GREEN+"\n 3."+ConsoleColors.RESET+"no, volver al menu principal\n";
+	}
 	public static String getAdFlag(){
 		return
 		"\t"+ConsoleColors.GREEN+"Listo para conocer las banderas del mundo?\n\n"+
