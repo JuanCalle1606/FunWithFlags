@@ -48,6 +48,17 @@ public class Util {
 			arr[i]=random;
 		}
 	}
+	public static String validateInput(String text){
+		/*char[] tempArr=text.toCharArray();
+		byte len=(byte)tempArr.length,index=0;
+		char[] newArr="test".toCharArray();
+		for(byte i=0;i<len;i++){
+			Main.trace((tempArr[i]+0)+"  ",false);
+			Main.trace((newArr[i]+0)+"");
+		}*/
+		return text.replace("\u00E3","\u00C3");
+	}
+
 	public static String convertToValid(String name){
 		String temp=name;
 		byte len=(byte)Texts.charCodes.length;
@@ -69,7 +80,6 @@ public class Util {
 	*/
 	public static void replaceColors(String[] mat){
 		for(byte i=0;i<27;i++)
-		{
 			mat[i]=
 			mat[i].equals("1")?
 				ConsoleColors.RED_BACKGROUND+"  "+ConsoleColors.RESET
@@ -88,7 +98,6 @@ public class Util {
 			:mat[i].equals("8")?
 				ConsoleColors.BLACK_BACKGROUND+"  "+ConsoleColors.RESET
 			:ConsoleColors.BLACK_BACKGROUND_BRIGHT+"  "+ConsoleColors.RESET;
-		}
 	}
 	/**
 	* Limpia la pantalla

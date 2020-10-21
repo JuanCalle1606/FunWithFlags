@@ -62,7 +62,7 @@ public class Main {
 			case 3:
 				trace(ConsoleColors.BLACK_BRIGHT+"No coloques tildes ni caracteres especiales(solo se soporta la ñ).\nEscribe 0 o \"salir\" para salir.\n");
 				trace(ConsoleColors.YELLOW+"Ingresa tu respuesta: "+ConsoleColors.RESET,false);
-				respuesta=ConsoleInput.getString().toLowerCase();
+				respuesta=Util.validateInput(ConsoleInput.getString().toLowerCase());
 				if(respuesta.equals(pais(randomFlags[0]).toLowerCase()))
 					isCorrect=true;
 				else if(respuesta.equals("0")||respuesta.equals("salir"))
