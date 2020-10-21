@@ -46,10 +46,11 @@ public class Main {
 		}
 		return true;
 	}
+	private static byte repeatGame=0;
 	private static Boolean adivinarPais(Boolean init,byte dif){
 		Util.clear();
-		trace(Texts.getAdCountry());
-		byte dificultad=(byte)choose(3);
+		trace(init?Texts.getAdCountry():"");
+		byte dificultad=init?(byte)choose(3):dif;
 		Util.clear();
 		byte[] randomFlags=new byte[8];
 		Boolean isCorrect=false;
@@ -88,7 +89,16 @@ public class Main {
 		}
 		else
 			trace(ConsoleColors.RED+"\tIncorrecto! esta no es la bandera de "+respuesta);
-		enter();
+		if(repeatGame==0){
+			trace(ConsoleColors.CYAN+"\nDeseas seguir jugando?"+ConsoleColors.BLACK_BRIGHT+"(se mantiene la dificultad)\n");
+			trace(ConsoleColors.GREEN+" 1."+ConsoleColors.RESET+"si"+ConsoleColors.GREEN+"\n 2."+ConsoleColors.RESET+"no\n");
+			if(choose(2)==1)
+				repeatGame=(byte)1;
+		}
+		if(repeatGame>0){
+			repeatGame--;
+			adivinarPais(false,dificultad);
+		}
 		return true;
 	}
 	private static Boolean adivinarBandera(){
