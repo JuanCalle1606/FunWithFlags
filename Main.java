@@ -65,7 +65,7 @@ public class Main {
 				trace(ConsoleColors.BLACK_BRIGHT+"No coloques tildes ni caracteres especiales(solo se soporta la ñ).\nEscribe 0 o \"salir\" para salir.\n");
 				trace(ConsoleColors.YELLOW+"Ingresa tu respuesta: "+ConsoleColors.RESET,false);
 				respuesta=Util.validateInput(ConsoleInput.getString().toLowerCase());
-				if(respuesta.equals(pais(randomFlags[0]).toLowerCase()))
+				if(respuesta.equals(pais(randomFlags[0])))
 					isCorrect=true;
 				else if(respuesta.equals("0")||respuesta.equals("salir"))
 					return true;
@@ -252,7 +252,7 @@ public class Main {
 			System.out.print(txt);
 	}
 	public static String pais(byte index){
-		return Util.convertToValid(paises[index]);
+		return Util.convertToValid(paises[index].toLowerCase());
 	}
 	/**
 	 * Esta función carga el archivo .csv y guarda los contenidos de las banderas
